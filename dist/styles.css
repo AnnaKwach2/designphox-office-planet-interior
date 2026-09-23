@@ -79,3 +79,16 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Fit the supplied business logo within the existing brand area. */
 .brand-logo{width:58px;height:58px;object-fit:contain;flex-shrink:0}.brand>span{white-space:nowrap}
+
+/* Keep the six homepage services balanced in two rows of three. */
+@media(min-width:1101px){
+  .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .service-card{min-height:360px}
+  .service-card:nth-child(3n){border-right:1px solid var(--line)}
+  .service-card:nth-child(n+4){border-top:1px solid var(--line)}
+}
+@media(min-width:561px) and (max-width:1100px){
+  .service-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .service-card:nth-child(even){border-right:1px solid var(--line)}
+  .service-card:nth-child(n+3){border-top:1px solid var(--line)}
+}
