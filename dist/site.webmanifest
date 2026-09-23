@@ -1,0 +1,14 @@
+{
+  "name": "Office Planet Interior",
+  "short_name": "Office Planet",
+  "icons": [
+    {
+      "src": "assets/office-planet-logo.png",
+      "sizes": "1254x1254",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#78836f",
+  "background_color": "#f7f3ec",
+  "display": "standalone"
+}

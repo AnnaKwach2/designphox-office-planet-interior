@@ -1,15 +1,5 @@
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.site-nav');
-
-toggle?.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  toggle.setAttribute('aria-expanded', String(open));
-  toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-});
-
-nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  toggle?.setAttribute('aria-expanded', 'false');
-}));
-
-document.getElementById('year').textContent = new Date().getFullYear();
+const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('#nav');menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open');document.body.style.overflow=open?'':'hidden'});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.style.overflow=''}));
+const serviceGroup=document.querySelector('.nav-group');const serviceToggle=document.querySelector('.nav-service-trigger button');if(serviceGroup&&serviceToggle){serviceToggle.addEventListener('click',event=>{event.stopPropagation();const open=serviceGroup.classList.toggle('open');serviceToggle.setAttribute('aria-expanded',String(open))});document.addEventListener('click',event=>{if(!serviceGroup.contains(event.target)){serviceGroup.classList.remove('open');serviceToggle.setAttribute('aria-expanded','false')}});document.addEventListener('keydown',event=>{if(event.key==='Escape'){serviceGroup.classList.remove('open');serviceToggle.setAttribute('aria-expanded','false');serviceToggle.focus()}})}
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelector('#year').textContent=new Date().getFullYear();
+const form=document.querySelector('#project-form');if(form){form.addEventListener('submit',event=>{event.preventDefault();let valid=true;form.querySelectorAll('[required]').forEach(input=>{const field=input.closest('.field');const empty=!input.value.trim();field.classList.toggle('invalid',empty);input.setAttribute('aria-invalid',String(empty));if(empty)valid=false});if(valid){const data=new FormData(form);const lines=[...data.entries()].map(([key,value])=>key.replaceAll('-',' ')+': '+value);const message='Hello Office Planet Interior, I would like help with my space.\n\n'+lines.join('\n\n');form.querySelector('.form-status').textContent='Your message is ready. Review it in WhatsApp, then send it.';window.location.href='https://wa.me/254726138627?text='+encodeURIComponent(message)}})}

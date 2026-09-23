@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://office-planet-interior.annakwaach.chatgpt.site/sitemap.xml
