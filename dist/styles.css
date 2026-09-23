@@ -99,6 +99,18 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.projects .project-grid{grid-template-columns:1fr 1fr}.projects .project-art,.projects .project-main .project-art{height:auto;aspect-ratio:4/3}}
 @media(max-width:560px){.projects .project-grid{grid-template-columns:1fr}.projects .project-art,.projects .project-main .project-art{height:auto;aspect-ratio:4/3}}
 
+/* Editorial homepage showcase: one large image beside two smaller images. */
+.projects .project-grid{grid-template-columns:.82fr 1.18fr;gap:26px}
+.projects .project-grid>a:first-child{grid-row:span 2}
+.projects .project-art,.projects .project-main .project-art{height:370px;aspect-ratio:auto}
+.projects .project-grid>a:first-child .project-art{height:820px}
+.projects .project-art img{transition:transform .7s cubic-bezier(.2,.75,.25,1),filter .4s}
+.projects .project:hover .project-art img,.projects .project:focus-within .project-art img{transform:scale(1.035);filter:saturate(1.04)}
+@media(max-width:1100px){.projects .project-grid>a:first-child .project-art{height:700px}}
+@media(max-width:900px){.projects .project-grid{grid-template-columns:1fr}.projects .project-grid>a:first-child{grid-row:auto}.projects .project-art,.projects .project-main .project-art,.projects .project-grid>a:first-child .project-art{height:560px;aspect-ratio:auto}}
+@media(max-width:560px){.projects .project-art,.projects .project-main .project-art,.projects .project-grid>a:first-child .project-art{height:430px}}
+@media(prefers-reduced-motion:reduce){.projects .project-art img{transition:none}.projects .project:hover .project-art img,.projects .project:focus-within .project-art img{transform:none}}
+
 /* Keep the six homepage services balanced in two rows of three. */
 @media(min-width:1101px){
   .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
