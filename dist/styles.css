@@ -80,6 +80,15 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Fit the supplied business logo within the existing brand area. */
 .brand-logo{width:58px;height:58px;object-fit:contain;flex-shrink:0}.brand>span{white-space:nowrap}
 
+/* Show every service portfolio image in full without cropping. */
+.service-gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+.gallery-project-tall{grid-row:auto}
+.gallery-project figure,.gallery-project-tall figure{height:auto;aspect-ratio:4/5;background:#e8e2d9}
+.gallery-project img{width:100%;height:100%;object-fit:contain;object-position:center;transition:filter .4s}
+.gallery-project:hover img,.gallery-project:focus-within img{transform:none;filter:saturate(1.04)}
+@media(max-width:900px){.service-gallery-grid{grid-template-columns:1fr 1fr}.gallery-project figure,.gallery-project-tall figure{height:auto;aspect-ratio:4/5}}
+@media(max-width:560px){.service-gallery-grid{grid-template-columns:1fr}.gallery-project figure,.gallery-project-tall figure{height:auto;min-height:0;aspect-ratio:4/5}}
+
 /* Keep the six homepage services balanced in two rows of three. */
 @media(min-width:1101px){
   .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
