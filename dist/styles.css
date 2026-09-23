@@ -83,12 +83,21 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Keep the six homepage services balanced in two rows of three. */
 @media(min-width:1101px){
   .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .service-card{min-height:360px}
+  .service-card{min-height:240px;padding-top:26px;padding-bottom:26px;gap:12px}
+  .service-card>div{min-height:0}
+  .service-card h3{min-height:54px}
+  .service-card p{min-height:52px}
+  .service-card b{margin-top:0}
   .service-card:nth-child(3n){border-right:1px solid var(--line)}
   .service-card:nth-child(n+4){border-top:1px solid var(--line)}
 }
 @media(min-width:561px) and (max-width:1100px){
   .service-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .service-card{min-height:250px;padding-top:26px;padding-bottom:26px;gap:12px}
+  .service-card>div{min-height:0}
+  .service-card h3{min-height:54px}
+  .service-card p{min-height:52px}
+  .service-card b{margin-top:0}
   .service-card:nth-child(even){border-right:1px solid var(--line)}
   .service-card:nth-child(n+3){border-top:1px solid var(--line)}
 }
