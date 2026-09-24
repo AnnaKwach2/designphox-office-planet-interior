@@ -111,9 +111,6 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:560px){.projects .project-art,.projects .project-main .project-art,.projects .project-grid>a:first-child .project-art{height:430px}}
 @media(prefers-reduced-motion:reduce){.projects .project-art img{transition:none}.projects .project:hover .project-art img,.projects .project:focus-within .project-art img{transform:none}}
 
-/* Keep the homepage showcase pattern while displaying each complete photo. */
-.projects .project-art{background:#e8e2d9}
-.projects .project-art img{object-fit:contain;object-position:center}
 
 /* Editorial service galleries with every project image shown in full. */
 .service-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 30px;align-items:start}
