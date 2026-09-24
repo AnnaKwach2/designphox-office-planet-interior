@@ -169,3 +169,6 @@ html,body{max-width:100%;overflow-x:hidden}
   .service-card:nth-child(even){border-right:1px solid var(--line)}
   .service-card:nth-child(n+3){border-top:1px solid var(--line)}
 }
+
+/* The footer uses one verified direct contact link and no icon-font payload. */
+.footer-social .footer-whatsapp{width:auto;height:auto;border-radius:0;padding:5px 0;border:0;border-bottom:1px solid rgba(255,255,255,.55);font-size:12px;letter-spacing:.04em}
