@@ -142,6 +142,12 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.project-brief.section{padding-top:70px;padding-bottom:70px;gap:38px}.project-page-form{padding:32px}}
 @media(max-width:560px){.project-brief.section{padding-top:58px;padding-bottom:58px}.project-page-form{padding:26px 20px}}
 
+/* Keep the featured-work heading compact on desktop. */
+@media(min-width:901px){
+  .projects .section-head{grid-template-columns:1.35fr .65fr;column-gap:60px}
+  .projects .section-head>div h2{font-size:clamp(52px,5vw,78px);white-space:nowrap}
+}
+
 /* Keep the six homepage services balanced in two rows of three. */
 @media(min-width:1101px){
   .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
