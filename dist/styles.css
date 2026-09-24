@@ -129,6 +129,19 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:900px){.service-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 22px}.gallery-project:nth-child(even){margin-top:0}}
 @media(max-width:620px){.service-gallery-grid{grid-template-columns:1fr;gap:44px}}
 
+/* Compact project enquiry section. */
+.project-brief.section{padding-top:82px;padding-bottom:82px;gap:6vw}
+.project-brief aside>p:not(.eyebrow){margin:20px 0}
+.project-contact{padding-top:18px;gap:5px}
+.project-page-form{padding:34px 38px}
+.project-page-form .field{margin-bottom:16px}
+.project-page-form .form-row{gap:24px}
+.project-page-form .field input,.project-page-form .field select,.project-page-form .field textarea{padding:8px 0}
+.project-page-form textarea{height:108px;min-height:108px}
+.project-page-form .form-note{margin-top:12px}
+@media(max-width:900px){.project-brief.section{padding-top:70px;padding-bottom:70px;gap:38px}.project-page-form{padding:32px}}
+@media(max-width:560px){.project-brief.section{padding-top:58px;padding-bottom:58px}.project-page-form{padding:26px 20px}}
+
 /* Keep the six homepage services balanced in two rows of three. */
 @media(min-width:1101px){
   .service-list{grid-template-columns:repeat(3,minmax(0,1fr))}
