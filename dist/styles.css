@@ -173,9 +173,5 @@ html,body{max-width:100%;overflow-x:hidden}
 /* The footer uses one verified direct contact link and no icon-font payload. */
 .footer-social .footer-whatsapp{width:auto;height:auto;border-radius:0;padding:5px 0;border:0;border-bottom:1px solid rgba(255,255,255,.55);font-size:12px;letter-spacing:.04em}
 
-/* Let the portrait club photograph read in full on wide screens while keeping the hero filled. */
-.single-service-hero.club-hero{background:#17120f;isolation:isolate}
-.single-service-hero.club-hero:before{content:"";position:absolute;inset:-32px;background:url("assets/client-work/club-bar-hero.webp") center 45%/cover no-repeat;filter:blur(24px);opacity:.44;transform:scale(1.06);z-index:0}
-.single-service-hero.club-hero>img{object-fit:contain;object-position:center 45%;z-index:1}
-.single-service-hero.club-hero:after{z-index:1}
-@media(max-width:700px){.single-service-hero.club-hero>img{object-fit:cover;object-position:center 43%}}
+/* Fill the complete club hero edge to edge with the supplied project photograph. */
+.single-service-hero.club-hero>img{object-fit:cover;object-position:center 43%}
