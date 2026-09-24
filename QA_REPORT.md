@@ -26,7 +26,7 @@
 | User journeys | Pass | Mobile menu opened/closed; empty project form exposed both required-field messages |
 | Responsive and visual | Pass | All 9 pages checked at 390px and 1440px; no horizontal overflow or broken images |
 | Accessibility | Pass with manual scope | One H1 per page, labelled controls, skip links, alt text, focus styles and reduced-motion support verified |
-| Performance | Improved | Repeated logo payload reduced from 1,357 KB to 12 KB; icon-font dependency removed; lower-page images remain lazy-loaded |
+| Performance | Improved | Repeated logo reduced from 1,357 KB to 12 KB; displayed photos reduced from 2,966 KB to 2,138 KB; responsive 720px sources added; icon-font dependency removed |
 | SEO and sharing | Fixed | Correct Office Planet brand metadata, unique club-page metadata, canonical URLs, 1200 × 630 social card, favicon set |
 | Production reliability | Pending publish verification | Local browser console showed no errors or warnings |
 | Defensive security | Pass for static scope | No secrets, authentication logic, storage or backend endpoints in this static build |
@@ -84,9 +84,17 @@
 - Impact: Facebook, Instagram and X links opened generic network homepages; Font Awesome added an external CSS/font dependency only for those icons.
 - Fix: retained the verified WhatsApp contact as text and removed the generic links and Font Awesome request.
 
+### [Medium] Oversized mobile image downloads
+
+- Status: Fixed
+- Affected pages: homepage, services index, project form and all service pages
+- Impact: phones could receive desktop-scale images even when the display area was much smaller.
+- Fix: recompressed displayed WebP photographs without cropping, preserved every original aspect ratio, and added 720px responsive sources for larger images.
+- Verification: displayed source images fell from 2,966 KB to 2,138 KB in aggregate. Representative mobile service hero files now range from 18.5 KB to 36 KB, down from 59 KB to 122 KB for their desktop sources.
+
 ## Remaining risks
 
 - WhatsApp may cache an older preview for a previously shared exact URL. A new query string or the final Vercel domain will trigger a fresh fetch.
 - Actual Facebook, Instagram and X business profile URLs were not provided, so they are intentionally omitted.
 - Automated Lighthouse lab scoring was unavailable in the local browser integration; the critical static payload and browser console were inspected directly.
-- Password protection and unrestricted public access are mutually exclusive on the same production URL. Vercel can use protected preview deployments while keeping the production domain public.
+- The requested Vercel production deployment will be publicly accessible without a password. Preview protection can remain separate if desired.
