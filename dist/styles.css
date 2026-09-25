@@ -175,3 +175,5 @@ html,body{max-width:100%;overflow-x:hidden}
 
 /* Fill the complete club hero edge to edge with the supplied project photograph. */
 .single-service-hero.club-hero>img{object-fit:cover;object-position:center 43%}
+
+.footer-social svg{width:25px;height:25px;display:block;fill:currentColor;overflow:visible}
