@@ -177,3 +177,23 @@ html,body{max-width:100%;overflow-x:hidden}
 .single-service-hero.club-hero>img{object-fit:cover;object-position:center 43%}
 
 .footer-social svg{width:25px;height:25px;display:block;fill:currentColor;overflow:visible}
+
+/* Keep the mobile navigation above the page and fully readable. */
+@media(max-width:900px){
+  .site-header{left:0;transform:none;max-width:none;z-index:100}
+  .site-header .brand,.site-header .menu-toggle{position:relative;z-index:102}
+  .site-header.menu-open{color:var(--ink)}
+  .site-header.menu-open .menu-toggle span:first-child{transform:translateY(7px) rotate(45deg)}
+  .site-header.menu-open .menu-toggle span:nth-child(2){opacity:0}
+  .site-header.menu-open .menu-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .menu-toggle span{transition:transform .2s ease,opacity .2s ease}
+  .site-header nav{inset:0;z-index:101;width:100%;height:100vh;height:100dvh;padding:105px 24px 38px;background:var(--ivory);overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start;gap:8px;color:var(--ink)}
+  .site-header nav.open{display:flex}
+  .site-header nav>a,.nav-service-trigger>a{width:max-content;max-width:100%;padding:7px 0}
+  .site-header nav .nav-cta{width:min(100%,360px);margin-top:12px;padding:13px 18px;background:var(--clay);color:#fff}
+}
+@media(max-width:560px){
+  .site-header .brand-logo{width:48px;height:48px}
+  .site-header .brand span{font-size:15px}
+  .site-header nav{font-size:29px;line-height:1.12}
+}
