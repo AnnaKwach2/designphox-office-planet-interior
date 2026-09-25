@@ -178,6 +178,9 @@ html,body{max-width:100%;overflow-x:hidden}
 
 .footer-social svg{width:25px;height:25px;display:block;fill:currentColor;overflow:visible}
 
+/* Keep the emphasized phrase balanced on its own line. */
+.intro h2 em{display:block;white-space:nowrap}
+
 /* Keep the mobile navigation above the page and fully readable. */
 @media(max-width:900px){
   .site-header{left:0;transform:none;max-width:none;z-index:100}
